@@ -1,12 +1,12 @@
 ebot: 
-  image: jamesyale/docker-ebot-csgo
+  image: egguy/ebot-csgo
   ports: 
-    - "172.17.42.1:12360:12361"
-  net: "host"
+    - "172.17.0.1:12360:12361"
   links:
     - "mysql:mysql"
+    #- "ebotweb:ebotweb"
 ebotweb: 
-  image: jamesyale/docker-ebot-csgo-web
+  image: egguy/ebot-csgo-web
   links: 
     - "mysql:mysql"
   ports: 
